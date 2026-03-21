@@ -21,40 +21,46 @@ const metadata = {
           On this page
         </p>
 
-        <nav class="space-y-2">
+        <nav class="space-y-2" id="about-side-nav">
           <a
             href="#intro"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="intro"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             About Me
           </a>
           <a
             href="#education"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="education"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             Education
           </a>
           <a
             href="#experience"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="experience"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             Experience
           </a>
           <a
             href="#activities"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="activities"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             Activities
           </a>
           <a
             href="#skills"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="skills"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             Skills
           </a>
           <a
             href="#beyond-data"
-            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            data-section-link="beyond-data"
+            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
             Beyond Data
           </a>
@@ -538,4 +544,49 @@ const metadata = {
       </section>
     </div>
   </section>
+
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const links = document.querySelectorAll(".about-nav-link");
+      const sections = document.querySelectorAll("section[id]");
+
+      const setActiveLink = (id) => {
+        links.forEach((link) => {
+          const isActive = link.getAttribute("data-section-link") === id;
+          link.classList.toggle("bg-foreground/10", isActive);
+          link.classList.toggle("text-foreground", isActive);
+          link.classList.toggle("font-semibold", isActive);
+          link.classList.toggle("text-primary", isActive);
+          link.classList.toggle("shadow-sm", isActive);
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visibleEntries = entries.filter(
+            (entry) => entry.isIntersecting,
+          );
+          if (visibleEntries.length > 0) {
+            const topMost = visibleEntries.sort(
+              (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
+            )[0];
+            setActiveLink(topMost.target.id);
+          }
+        },
+        {
+          rootMargin: "-20% 0px -60% 0px",
+          threshold: 0.1,
+        },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      const currentHash = window.location.hash.replace("#", "");
+      if (currentHash) {
+        setActiveLink(currentHash);
+      } else {
+        setActiveLink("intro");
+      }
+    });
+  </script>
 </BaseLayout>
