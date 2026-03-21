@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { siteConfig } from "@/config/site";
-import Hero from "@/components/widgets/Hero.astro";
+import me from "@/assets/images/me.png";
 
 const base = "/milad-portfolio/";
 
@@ -14,24 +14,77 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-  <Hero
-    title={`Turning Data into <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Insight</span>`}
-    tagline="Monash University • Melbourne"
-    description="I’m Milad Nooraei, a Master of Data Science student at Monash University with experience in data analysis, machine learning, and data visualization. I work with tools like Python, SQL, Power BI, and statistical methods to explore data, uncover patterns, and support better decision-making across healthcare, sports, and digital datasets."
-    actions={[
-      {
-        text: "View Projects",
-        href: `${base}services/`,
-        variant: "primary",
-        icon: "lucide:folder-open",
-      },
-      {
-        text: "Contact Me",
-        href: `${base}contact/`,
-        variant: "secondary",
-        icon: "lucide:mail",
-        ariaLabel: "Go to contact page",
-      },
-    ]}
-  />
+  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div class="text-center md:text-left">
+        <div
+          class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1 text-sm font-semibold text-primary"
+        >
+          <span class="relative flex h-2 w-2" aria-hidden="true">
+            <span
+              class="absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75 animate-ping motion-reduce:animate-none"
+            ></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"
+            ></span>
+          </span>
+          Monash University • Melbourne
+        </div>
+
+        <h1
+          class="mb-6 text-5xl font-extrabold tracking-tight text-foreground md:text-7xl"
+        >
+          Turning Data into
+          <br class="hidden md:block" />
+          <span
+            class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+          >
+            Insight
+          </span>
+        </h1>
+
+        <p
+          class="mx-auto mb-10 max-w-2xl text-xl text-muted-foreground md:mx-0"
+        >
+          I’m Milad Nooraei, a Master of Data Science student at Monash
+          University with experience in data analysis, machine learning, and
+          data visualization. I work with tools like Python, SQL, Power BI, and
+          statistical methods to explore data, uncover patterns, and support
+          better decision-making across different domains.
+        </p>
+
+        <div
+          class="flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start"
+        >
+          <a
+            href={`${base}services/`}
+            class="inline-flex items-center justify-center rounded-2xl bg-foreground px-6 py-3 text-base font-semibold text-background shadow-lg transition hover:opacity-90"
+          >
+            View Projects
+          </a>
+
+          <a
+            href={`${base}contact/`}
+            class="inline-flex items-center justify-center rounded-2xl border border-border bg-card px-6 py-3 text-base font-semibold text-foreground transition hover:bg-foreground/5"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end">
+        <div class="group relative">
+          <div
+            class="absolute -inset-2 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.25),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.25),transparent_40%)] blur-xl opacity-80 transition duration-300 group-hover:opacity-100"
+          >
+          </div>
+
+          <img
+            src={me.src}
+            alt="Milad Nooraei"
+            class="relative h-[360px] w-[300px] object-cover rounded-[2rem] border border-border shadow-2xl transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_40px_rgba(96,165,250,0.18)] md:h-[420px] md:w-[340px]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
