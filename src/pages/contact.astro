@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Content from "@/components/widgets/Content.astro";
-import Features from "@/components/widgets/Features.astro";
+import { Icon } from "astro-icon/components";
 
 const metadata = {
   title: "Contact",
@@ -17,51 +17,134 @@ const introText = [
 <BaseLayout {metadata}>
   <Content tagline="Contact" title="Let’s Connect" description={introText} />
 
-  <Features
-    tagline="Contact Details"
-    title="Reach Out"
-    subtitle="The best way to contact me is by email or LinkedIn, but you can also find me through the links below."
-    classes={{ container: "pt-0 md:pt-0" }}
-    features={[
-      {
-        title: "Phone",
-        description: "+61 422 144 417",
-        icon: "lucide:phone",
-        iconClass: "bg-green-500/10 text-green-400",
-      },
-      {
-        title: "Email",
-        description: "mnoo0018@student.monash.edu",
-        icon: "lucide:mail",
-        iconClass: "bg-yellow-500/10 text-yellow-400",
-      },
-      {
-        title: "Location",
-        description: "South Yarra, Melbourne, Victoria, Australia",
-        icon: "lucide:map-pin",
-        iconClass: "bg-red-500/10 text-red-400",
-      },
-      {
-        title: "LinkedIn",
-        description: "linkedin.com/in/milad-nooraei",
-        icon: "lucide:linkedin",
-        iconClass: "bg-blue-500/10 text-blue-400",
-        href: "https://www.linkedin.com/in/milad-nooraei/",
-      },
-      {
-        title: "Instagram",
-        description: "@milad___nooraei",
-        icon: "lucide:instagram",
-        iconClass: "bg-pink-500/10 text-pink-400",
-        href: "https://www.instagram.com/milad___nooraei",
-      },
-      {
-        title: "Professional Interest",
-        description:
-          "Open to data, analytics, and technology-focused opportunities",
-        icon: "lucide:briefcase",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-    ]}
-  />
+  <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Phone -->
+      <div
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+        >
+        </div>
+        <div class="relative">
+          <div
+            class="mb-4 inline-flex rounded-2xl bg-green-500/10 p-3 text-green-400"
+          >
+            <Icon name="lucide:phone" class="h-6 w-6" />
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">Phone</h3>
+          <p class="mt-2 text-muted-foreground">
+            <a
+              href="tel:+61422144417"
+              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+            >
+              +61 422 144 417
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+        >
+        </div>
+        <div class="relative">
+          <div
+            class="mb-4 inline-flex rounded-2xl bg-yellow-500/10 p-3 text-yellow-400"
+          >
+            <Icon name="lucide:mail" class="h-6 w-6" />
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">Email</h3>
+          <p class="mt-2 text-muted-foreground break-all">
+            <a
+              href="mailto:mnoo0018@student.monash.edu"
+              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+            >
+              mnoo0018@student.monash.edu
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+        >
+        </div>
+        <div class="relative">
+          <div
+            class="mb-4 inline-flex rounded-2xl bg-red-500/10 p-3 text-red-400"
+          >
+            <Icon name="lucide:map-pin" class="h-6 w-6" />
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">Location</h3>
+          <p class="mt-2 text-muted-foreground">Melbourne, Australia</p>
+        </div>
+      </div>
+
+      <!-- LinkedIn -->
+      <div
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+        >
+        </div>
+        <div class="relative">
+          <div
+            class="mb-4 inline-flex rounded-2xl bg-blue-500/10 p-3 text-blue-400"
+          >
+            <Icon name="lucide:linkedin" class="h-6 w-6" />
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">LinkedIn</h3>
+          <p class="mt-2 text-muted-foreground break-all">
+            <a
+              href="https://www.linkedin.com/in/milad-nooraei/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+            >
+              linkedin.com/in/milad-nooraei
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+        >
+        </div>
+        <div class="relative">
+          <div
+            class="mb-4 inline-flex rounded-2xl bg-pink-500/10 p-3 text-pink-400"
+          >
+            <Icon name="lucide:instagram" class="h-6 w-6" />
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">Instagram</h3>
+          <p class="mt-2 text-muted-foreground">
+            <a
+              href="https://www.instagram.com/milad___nooraei"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+            >
+              @milad___nooraei
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
