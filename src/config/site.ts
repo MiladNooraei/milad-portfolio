@@ -1,7 +1,6 @@
 import ogImage from "@/assets/og-image.png";
 
-const rawBase = import.meta.env.BASE_URL;
-const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const base = "/milad-portfolio/";
 
 export const siteConfig = {
   name: "Milad Nooraei",
@@ -22,7 +21,7 @@ export const siteConfig = {
   },
 
   navLinks: [
-    { text: "Home", href: base },
+    { text: "Home", href: `${base}` },
     { text: "About", href: `${base}about/` },
     { text: "Projects", href: `${base}services/` },
     { text: "Contact", href: `${base}contact/` },
