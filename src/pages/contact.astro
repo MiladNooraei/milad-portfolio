@@ -20,131 +20,113 @@ const introText = [
   <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       <!-- Phone -->
-      <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      <a
+        href="tel:+61422144417"
+        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
       >
         <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
         >
         </div>
-        <div class="relative">
+        <div class="relative select-text">
           <div
             class="mb-4 inline-flex rounded-2xl bg-green-500/10 p-3 text-green-400"
           >
             <Icon name="lucide:phone" class="h-6 w-6" />
           </div>
           <h3 class="text-xl font-semibold text-foreground">Phone</h3>
-          <p class="mt-2 text-muted-foreground">
-            <a
-              href="tel:+61422144417"
-              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
-            >
-              +61 422 144 417
-            </a>
-          </p>
+          <p class="mt-2 text-muted-foreground select-text">+61 422 144 417</p>
         </div>
-      </div>
+      </a>
 
       <!-- Email -->
-      <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      <a
+        href="mailto:mnoo0018@student.monash.edu"
+        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
       >
         <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
         >
         </div>
-        <div class="relative">
+        <div class="relative select-text">
           <div
             class="mb-4 inline-flex rounded-2xl bg-yellow-500/10 p-3 text-yellow-400"
           >
             <Icon name="lucide:mail" class="h-6 w-6" />
           </div>
           <h3 class="text-xl font-semibold text-foreground">Email</h3>
-          <p class="mt-2 text-muted-foreground break-all">
-            <a
-              href="mailto:mnoo0018@student.monash.edu"
-              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
-            >
-              mnoo0018@student.monash.edu
-            </a>
+          <p class="mt-2 break-all text-muted-foreground select-text">
+            mnoo0018@student.monash.edu
           </p>
         </div>
-      </div>
+      </a>
 
       <!-- Location -->
       <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
       >
         <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
         >
         </div>
-        <div class="relative">
+        <div class="relative select-text">
           <div
             class="mb-4 inline-flex rounded-2xl bg-red-500/10 p-3 text-red-400"
           >
             <Icon name="lucide:map-pin" class="h-6 w-6" />
           </div>
           <h3 class="text-xl font-semibold text-foreground">Location</h3>
-          <p class="mt-2 text-muted-foreground">Melbourne, Australia</p>
+          <p class="mt-2 text-muted-foreground select-text">
+            Melbourne, Australia
+          </p>
         </div>
       </div>
 
       <!-- LinkedIn -->
-      <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      <a
+        href="https://www.linkedin.com/in/milad-nooraei/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
       >
         <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
         >
         </div>
-        <div class="relative">
+        <div class="relative select-text">
           <div
             class="mb-4 inline-flex rounded-2xl bg-blue-500/10 p-3 text-blue-400"
           >
             <Icon name="lucide:linkedin" class="h-6 w-6" />
           </div>
           <h3 class="text-xl font-semibold text-foreground">LinkedIn</h3>
-          <p class="mt-2 text-muted-foreground break-all">
-            <a
-              href="https://www.linkedin.com/in/milad-nooraei/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
-            >
-              linkedin.com/in/milad-nooraei
-            </a>
+          <p class="mt-2 break-all text-muted-foreground select-text">
+            linkedin.com/in/milad-nooraei
           </p>
         </div>
-      </div>
+      </a>
 
       <!-- Instagram -->
-      <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+      <a
+        href="https://www.instagram.com/milad___nooraei"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
       >
         <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
         >
         </div>
-        <div class="relative">
+        <div class="relative select-text">
           <div
             class="mb-4 inline-flex rounded-2xl bg-pink-500/10 p-3 text-pink-400"
           >
             <Icon name="lucide:instagram" class="h-6 w-6" />
           </div>
           <h3 class="text-xl font-semibold text-foreground">Instagram</h3>
-          <p class="mt-2 text-muted-foreground">
-            <a
-              href="https://www.instagram.com/milad___nooraei"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-medium text-foreground transition duration-300 hover:font-semibold hover:text-blue-400 hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"
-            >
-              @milad___nooraei
-            </a>
-          </p>
+          <p class="mt-2 text-muted-foreground select-text">@milad___nooraei</p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 </BaseLayout>
