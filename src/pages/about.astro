@@ -1,9 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Content from "@/components/widgets/Content.astro";
-import Content2 from "@/components/widgets/Content2.astro";
-
-const base = "/milad-portfolio/";
 
 const metadata = {
   title: "About",
@@ -13,139 +9,439 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-  <Content
-    tagline="Profile"
-    title="About Me"
-    description={[
-      "I’m Milad Nooraei, a Master of Data Science student at Monash University with a background in computer engineering and hands-on experience in data analysis, programming, and data visualization.",
-      "I enjoy working with data to uncover patterns, communicate insights clearly, and support better decision-making across real-world domains including healthcare, digital platforms, and consumer data.",
-    ]}
-  />
-
-  <!-- Education -->
-  <Content2 title="Education" tagline="Academic Background">
-    <Fragment>
-      <div class="text-left space-y-8 text-muted-foreground">
-        <div>
-          <p class="text-lg font-semibold text-foreground">
-            Master of Data Science —
-            <a
-              href="https://www.monash.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-400 hover:text-blue-300 underline underline-offset-4"
-            >
-              Monash University
-            </a>, Melbourne, Australia
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-[240px_minmax(0,1fr)]">
+      <!-- Left side navigation -->
+      <aside class="hidden lg:block">
+        <div
+          class="sticky top-28 rounded-3xl border border-border bg-card/60 p-5 backdrop-blur"
+        >
+          <p
+            class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            On this page
           </p>
 
-          <ul class="list-disc ml-6 mt-3 space-y-2">
-            <li>2025 – Present</li>
-            <li><strong>GPA:</strong> 85.1 / 100 (≈ 3.63 / 4.0)</li>
-            <li>
-              <strong>Relevant Coursework:</strong> Statistical Data Modelling, Foundations
-              of Data Science, IT Research and Innovation Methods, Project Management,
-              Introduction to Python Programming, Introduction to Databases, Mathematical
-              Foundations for Data Science and AI, Introduction to Computer Architecture
-              and Networks
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="text-lg font-semibold text-foreground">
-            Bachelor of Computer Engineering —
+          <nav class="space-y-2">
             <a
-              href="https://shirazu.ac.ir/en/home"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-400 hover:text-blue-300 underline underline-offset-4"
+              href="#intro"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
             >
-              Shiraz University
-            </a>, Shiraz, Iran
-          </p>
-
-          <ul class="list-disc ml-6 mt-3 space-y-2">
-            <li>2020 – 2024</li>
-            <li>
-              Focus: Programming, algorithms, systems, software development, and
-              core computer engineering foundations
-            </li>
-          </ul>
+              About Me
+            </a>
+            <a
+              href="#education"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            >
+              Education
+            </a>
+            <a
+              href="#experience"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            >
+              Experience
+            </a>
+            <a
+              href="#activities"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            >
+              Activities
+            </a>
+            <a
+              href="#skills"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            >
+              Skills
+            </a>
+            <a
+              href="#beyond-data"
+              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            >
+              Beyond Data
+            </a>
+          </nav>
         </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="space-y-8">
+        <!-- Intro -->
+        <section
+          id="intro"
+          class="rounded-3xl border border-border bg-card/60 p-8 shadow-sm backdrop-blur"
+        >
+          <p
+            class="mb-3 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Profile
+          </p>
+          <h1
+            class="mb-6 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl"
+          >
+            About Me
+          </h1>
+
+          <div class="space-y-4 text-lg leading-8 text-muted-foreground">
+            <p>
+              I’m <span class="font-semibold text-foreground"
+                >Milad Nooraei</span
+              >, a Master of Data Science student at Monash University with a
+              background in computer engineering and hands-on experience in data
+              analysis, programming, and data visualization.
+            </p>
+            <p>
+              I enjoy working with data to uncover patterns, communicate
+              insights clearly, and support better decision-making across
+              real-world domains including healthcare, digital platforms, and
+              consumer data.
+            </p>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="space-y-5">
+          <div>
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+            >
+              Academic Background
+            </p>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground">
+              Education
+            </h2>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2">
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Master of Data Science
+              </h3>
+              <p class="mt-1 text-muted-foreground">
+                <a
+                  href="https://www.monash.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-400 underline underline-offset-4 hover:text-blue-300"
+                >
+                  Monash University
+                </a>
+                · Melbourne, Australia
+              </p>
+
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>2025 – Present</li>
+                <li>
+                  <span class="font-semibold text-foreground">GPA:</span> 85.1 / 100
+                  (≈ 3.63 / 4.0)
+                </li>
+                <li>
+                  <span class="font-semibold text-foreground"
+                    >Relevant coursework:</span
+                  >
+                  Statistical Data Modelling, Foundations of Data Science, IT Research
+                  and Innovation Methods, Project Management, Introduction to Python
+                  Programming, Introduction to Databases, Mathematical Foundations
+                  for Data Science and AI, Introduction to Computer Architecture and
+                  Networks
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Bachelor of Computer Engineering
+              </h3>
+              <p class="mt-1 text-muted-foreground">
+                <a
+                  href="https://shirazu.ac.ir/en/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-400 underline underline-offset-4 hover:text-blue-300"
+                >
+                  Shiraz University
+                </a>
+                · Shiraz, Iran
+              </p>
+
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>2020 – 2024</li>
+                <li>
+                  Focus on programming, algorithms, systems, software
+                  development, and core computer engineering foundations
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="space-y-5">
+          <div>
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+            >
+              Professional Experience
+            </p>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground">
+              Experience
+            </h2>
+          </div>
+
+          <div class="space-y-5">
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Data Analyst
+              </h3>
+              <p class="mt-1 text-muted-foreground">
+                Shiraz University of Medical Sciences · Shiraz, Iran
+              </p>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Worked on ICU patient datasets in hospital settings.</li>
+                <li>
+                  Applied APACHE-based analytical methods to generate clinical
+                  insights.
+                </li>
+                <li>
+                  Supported data-driven interpretation in a healthcare context.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Data Analysis Intern
+              </h3>
+              <p class="mt-1 text-muted-foreground">Quera · Tehran, Iran</p>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>
+                  Built hands-on experience with Python, SQL, statistics, and
+                  dashboards.
+                </li>
+                <li>
+                  Worked with web scraping, data visualization, and analytical
+                  workflows.
+                </li>
+                <li>
+                  Used tools such as Pandas, NumPy, Plotly, Power BI, and
+                  Streamlit.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Teaching Assistant
+              </h3>
+              <p class="mt-1 text-muted-foreground">
+                Shiraz University · Shiraz, Iran
+              </p>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>
+                  Supported courses in Python programming and object-oriented
+                  programming.
+                </li>
+                <li>
+                  Assisted with modeling concepts and student learning
+                  activities.
+                </li>
+                <li>
+                  Helped explain technical topics clearly in an academic
+                  setting.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activities -->
+        <section id="activities" class="space-y-5">
+          <div>
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+            >
+              Leadership & Involvement
+            </p>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground">
+              Activities
+            </h2>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2">
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Monash Data & AI Society
+              </h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Serving as Data & AI Officer.</li>
+                <li>
+                  Supporting events and workshops that encourage student
+                  engagement in data and AI.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                Hour of Code
+              </h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Contributed to event marketing and content creation.</li>
+                <li>Taught Python programming to high school students.</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">
+                ACM Scientific Association
+              </h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Helped organize events and academic activities.</li>
+                <li>
+                  Supported ICPC-related contests and engagement initiatives.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-xl font-semibold text-foreground">SampCode</h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>
+                  Co-organized the event and helped manage teams and execution.
+                </li>
+                <li>
+                  Contributed to coordination and communication across
+                  activities.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="space-y-5">
+          <div>
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+            >
+              Technical Skills
+            </p>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground">
+              Skills
+            </h2>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-lg font-semibold text-foreground">Programming</h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Python</li>
+                <li>R</li>
+                <li>SQL</li>
+                <li>Java</li>
+                <li>C</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-lg font-semibold text-foreground">
+                Data Analysis & Visualization
+              </h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+                <li>Plotly</li>
+                <li>Power BI</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-lg font-semibold text-foreground">
+                Machine Learning
+              </h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Scikit-learn</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-lg font-semibold text-foreground">Databases</h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>MySQL</li>
+                <li>Oracle</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+            >
+              <h3 class="text-lg font-semibold text-foreground">Tools</h3>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                <li>Jupyter Notebook</li>
+                <li>Visual Studio Code</li>
+                <li>Streamlit</li>
+                <li>Git</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Beyond Data -->
+        <section id="beyond-data" class="space-y-5">
+          <div>
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+            >
+              Personal
+            </p>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground">
+              Beyond Data
+            </h2>
+          </div>
+
+          <div
+            class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+          >
+            <ul class="list-disc space-y-2 pl-5 text-muted-foreground">
+              <li>
+                Outside of my academic and professional work, I enjoy music and
+                play the piano.
+              </li>
+              <li>
+                I’m also interested in exploring new activities, and I’m
+                currently planning to start figure ice skating.
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
-    </Fragment>
-  </Content2>
-
-  <!-- Experience -->
-  <Content2
-    isReversed={true}
-    title="Experience"
-    description={[
-      "Data Analyst — Shiraz University of Medical Sciences: Worked on ICU patient datasets and applied APACHE-based analytical methods to generate clinical insights.",
-      "Data Analysis Intern — Quera: Built hands-on experience with Python, SQL, statistics, dashboards, web scraping, and analytical workflows.",
-      "Teaching Assistant — Shiraz University: Supported courses in Python programming, object-oriented programming, and modeling.",
-    ]}
-    tagline="Professional Experience"
-  />
-
-  <!-- Activities -->
-  <Content2
-    title="Leadership & Activities"
-    description={[
-      "Data & AI Officer — Monash Data & AI Society",
-      "Hour of Code — Contributed to event marketing, content creation, and Python teaching for high school students",
-      "ACM Scientific Association — Organized events and supported ICPC-related activities",
-      "SampCode — Co-organized the event and helped manage teams and execution",
-    ]}
-    tagline="Leadership & Involvement"
-  />
-
-  <!-- Skills -->
-  <Content2
-    isReversed={true}
-    title="Skills"
-    description={[
-      "Programming: Python, R, SQL, Java, C",
-      "Data Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Plotly, Power BI",
-      "Machine Learning: Scikit-learn",
-      "Databases: MySQL, Oracle",
-      "Tools: Jupyter Notebook, Visual Studio Code, Streamlit, Git",
-    ]}
-    tagline="Technical Skills"
-  />
-
-  <!-- Personal -->
-  <Content2
-    title="Beyond Data"
-    tagline="Personal"
-    description={[
-      "Outside of my academic and professional work, I enjoy music and play the piano.",
-      "I’m also interested in exploring new activities, and I’m currently planning to start figure ice skating.",
-    ]}
-  />
-
-  <!-- Career -->
-  <Content2
-    title="What I’m Looking For"
-    description={[
-      "I’m currently building my portfolio for data analyst and technology-focused roles where I can apply analytical thinking, technical skills, and problem-solving to real business or operational challenges.",
-      "I’m especially interested in opportunities that involve data analysis, visualization, insight generation, and using data to support strategic decisions.",
-    ]}
-    tagline="Career Direction"
-    actions={[
-      {
-        text: "View Projects",
-        href: `${base}services/`,
-        variant: "primary",
-        icon: "lucide:folder-open",
-      },
-      {
-        text: "Contact Me",
-        href: `${base}contact/`,
-        variant: "secondary",
-        icon: "lucide:mail",
-      },
-    ]}
-  />
+    </div>
+  </section>
 </BaseLayout>
