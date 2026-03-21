@@ -1,5 +1,7 @@
 import ogImage from "@/assets/og-image.png";
 
+const base = import.meta.env.BASE_URL;
+
 export const siteConfig = {
   name: "Milad Nooraei",
   description:
@@ -19,9 +21,9 @@ export const siteConfig = {
   },
 
   navLinks: [
-    { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Projects", href: "/services" },
-    { text: "Contact", href: "/contact" },
+    { text: "Home", href: `${base}` },
+    { text: "About", href: `${base}about` },
+    { text: "Projects", href: `${base}services` },
+    { text: "Contact", href: `${base}contact` },
   ],
 };
