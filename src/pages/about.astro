@@ -8,28 +8,73 @@ const base = "/milad-portfolio/";
 const metadata = {
   title: "About",
   description:
-    "Learn more about Milad Nooraei, a Master of Data Science student at Monash University with experience in analytics, machine learning, and visualization.",
+    "Learn more about Milad Nooraei, a Master of Data Science student at Monash University with experience in analytics, programming, and data visualization.",
 };
 ---
 
 <BaseLayout {metadata}>
   <Content
-    tagline="About"
+    tagline="Profile"
     title="About Me"
     description={[
-      "I’m Milad Nooraei, a Master of Data Science student at Monash University with a background in computer engineering and hands-on experience in data analysis, machine learning, and data visualization.",
+      "I’m Milad Nooraei, a Master of Data Science student at Monash University with a background in computer engineering and hands-on experience in data analysis, programming, and data visualization.",
       "I enjoy working with data to uncover patterns, communicate insights clearly, and support better decision-making across real-world domains including healthcare, digital platforms, and consumer data.",
     ]}
   />
 
-  <Content2
-    title="Education"
-    description={[
-      "Master of Data Science — Monash University, Melbourne, Australia (2025 – Present)",
-      "Bachelor of Computer Engineering — Shiraz University, Shiraz, Iran (2020 – 2024)",
-    ]}
-    tagline="Academic Background"
-  />
+  <Content2 title="Education" tagline="Academic Background">
+    <Fragment>
+      <div class="text-left space-y-8 text-muted-foreground">
+        <div>
+          <p class="text-lg font-semibold text-foreground">
+            Master of Data Science —
+            <a
+              href="https://www.monash.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 underline underline-offset-4"
+            >
+              Monash University
+            </a>, Melbourne, Australia
+          </p>
+
+          <ul class="list-disc ml-6 mt-3 space-y-2">
+            <li>2025 – Present</li>
+            <li><strong>GPA:</strong> 85.1 / 100 (≈ 3.63 / 4.0)</li>
+            <li>
+              <strong>Relevant Coursework:</strong> Statistical Data Modelling, Foundations
+              of Data Science, IT Research and Innovation Methods, Project Management,
+              Introduction to Python Programming, Introduction to Databases, Mathematical
+              Foundations for Data Science and AI, Introduction to Computer Architecture
+              and Networks
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-lg font-semibold text-foreground">
+            Bachelor of Computer Engineering —
+            <a
+              href="https://shirazu.ac.ir/en/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 underline underline-offset-4"
+            >
+              Shiraz University
+            </a>, Shiraz, Iran
+          </p>
+
+          <ul class="list-disc ml-6 mt-3 space-y-2">
+            <li>2020 – 2024</li>
+            <li>
+              Focus: Programming, algorithms, systems, software development, and
+              core computer engineering foundations
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Fragment>
+  </Content2>
 
   <Content2
     isReversed={true}
