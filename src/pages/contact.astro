@@ -20,65 +20,38 @@ const introText = [
   <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       <!-- Phone -->
-      <a
-        href="tel:+61422144417"
-        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
-      >
-        <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
-        >
-        </div>
-        <div class="relative select-text">
-          <div
-            class="mb-4 inline-flex rounded-2xl bg-green-500/10 p-3 text-green-400"
-          >
-            <Icon name="lucide:phone" class="h-6 w-6" />
+      <a href="tel:+61422144417" class="group card">
+        <div class="card-glow"></div>
+        <div class="relative">
+          <div class="icon bg-green-500/10 text-green-500">
+            <Icon name="lucide:phone" />
           </div>
-          <h3 class="text-xl font-semibold text-foreground">Phone</h3>
-          <p class="mt-2 text-muted-foreground select-text">+61 422 144 417</p>
+          <h3 class="title">Phone</h3>
+          <p class="text">+61 422 144 417</p>
         </div>
       </a>
 
       <!-- Email -->
-      <a
-        href="mailto:mnoo0018@student.monash.edu"
-        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
-      >
-        <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
-        >
-        </div>
-        <div class="relative select-text">
-          <div
-            class="mb-4 inline-flex rounded-2xl bg-yellow-500/10 p-3 text-yellow-400"
-          >
-            <Icon name="lucide:mail" class="h-6 w-6" />
+      <a href="mailto:mnoo0018@student.monash.edu" class="group card">
+        <div class="card-glow"></div>
+        <div class="relative">
+          <div class="icon bg-red-500/10 text-red-500">
+            <Icon name="lucide:mail" />
           </div>
-          <h3 class="text-xl font-semibold text-foreground">Email</h3>
-          <p class="mt-2 break-all text-muted-foreground select-text">
-            mnoo0018@student.monash.edu
-          </p>
+          <h3 class="title">Email</h3>
+          <p class="text break-all">mnoo0018@student.monash.edu</p>
         </div>
       </a>
 
       <!-- Location -->
-      <div
-        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
-      >
-        <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
-        >
-        </div>
-        <div class="relative select-text">
-          <div
-            class="mb-4 inline-flex rounded-2xl bg-red-500/10 p-3 text-red-400"
-          >
-            <Icon name="lucide:map-pin" class="h-6 w-6" />
+      <div class="group card">
+        <div class="card-glow"></div>
+        <div class="relative">
+          <div class="icon bg-rose-500/10 text-rose-500">
+            <Icon name="lucide:map-pin" />
           </div>
-          <h3 class="text-xl font-semibold text-foreground">Location</h3>
-          <p class="mt-2 text-muted-foreground select-text">
-            Melbourne, Australia
-          </p>
+          <h3 class="title">Location</h3>
+          <p class="text">Melbourne, Australia</p>
         </div>
       </div>
 
@@ -86,23 +59,31 @@ const introText = [
       <a
         href="https://www.linkedin.com/in/milad-nooraei/"
         target="_blank"
-        rel="noopener noreferrer"
-        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+        class="group card"
       >
-        <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
-        >
-        </div>
-        <div class="relative select-text">
-          <div
-            class="mb-4 inline-flex rounded-2xl bg-blue-500/10 p-3 text-blue-400"
-          >
-            <Icon name="lucide:linkedin" class="h-6 w-6" />
+        <div class="card-glow"></div>
+        <div class="relative">
+          <div class="icon bg-[#0A66C2]/10 text-[#0A66C2]">
+            <Icon name="lucide:linkedin" />
           </div>
-          <h3 class="text-xl font-semibold text-foreground">LinkedIn</h3>
-          <p class="mt-2 break-all text-muted-foreground select-text">
-            linkedin.com/in/milad-nooraei
-          </p>
+          <h3 class="title">LinkedIn</h3>
+          <p class="text break-all">linkedin.com/in/milad-nooraei</p>
+        </div>
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/MiladNooraei"
+        target="_blank"
+        class="group card"
+      >
+        <div class="card-glow"></div>
+        <div class="relative">
+          <div class="icon bg-gray-900/10 text-gray-900 dark:text-white">
+            <Icon name="lucide:github" />
+          </div>
+          <h3 class="title">GitHub</h3>
+          <p class="text break-all">github.com/MiladNooraei</p>
         </div>
       </a>
 
@@ -110,23 +91,47 @@ const introText = [
       <a
         href="https://www.instagram.com/milad___nooraei"
         target="_blank"
-        rel="noopener noreferrer"
-        class="group relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+        class="group card"
       >
-        <div
-          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.15),transparent_40%)]"
-        >
-        </div>
-        <div class="relative select-text">
+        <div class="card-glow"></div>
+        <div class="relative">
           <div
-            class="mb-4 inline-flex rounded-2xl bg-pink-500/10 p-3 text-pink-400"
+            class="icon bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white"
           >
-            <Icon name="lucide:instagram" class="h-6 w-6" />
+            <Icon name="lucide:instagram" />
           </div>
-          <h3 class="text-xl font-semibold text-foreground">Instagram</h3>
-          <p class="mt-2 text-muted-foreground select-text">@milad___nooraei</p>
+          <h3 class="title">Instagram</h3>
+          <p class="text">@milad___nooraei</p>
         </div>
       </a>
     </div>
   </section>
+
+  <!-- Styles -->
+  <style>
+    .card {
+      @apply relative block overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)];
+    }
+
+    .card-glow {
+      @apply pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100;
+      background: radial-gradient(
+        circle at top left,
+        rgba(96, 165, 250, 0.15),
+        transparent 40%
+      );
+    }
+
+    .icon {
+      @apply mb-4 inline-flex rounded-2xl p-3 text-xl;
+    }
+
+    .title {
+      @apply text-xl font-semibold text-foreground;
+    }
+
+    .text {
+      @apply mt-2 text-muted-foreground;
+    }
+  </style>
 </BaseLayout>
