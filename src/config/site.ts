@@ -22,8 +22,8 @@ export const siteConfig = {
 
   navLinks: [
     { text: "Home", href: `${base}` },
-    { text: "About", href: `${base}about` },
-    { text: "Projects", href: `${base}services` },
-    { text: "Contact", href: `${base}contact` },
+    { text: "About", href: `${base}about/` },
+    { text: "Projects", href: `${base}services/` },
+    { text: "Contact", href: `${base}contact/` },
   ],
 };
