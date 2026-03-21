@@ -5,10 +5,16 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://miladnooraei.github.io",
-  base: "/milad-portfolio",
+  site: "https://miladnooraei.github.io/milad-portfolio",
+  base: "/milad-portfolio/",
   output: "static",
-  integrations: [mdx(), sitemap(), icon()],
+
+  integrations: [
+    mdx(),
+    sitemap(),
+    icon()
+  ],
+
   vite: {
     plugins: [tailwind()],
   },
