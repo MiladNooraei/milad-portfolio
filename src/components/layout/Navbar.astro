@@ -7,6 +7,18 @@ const homeHref = `${base}`;
 const aboutHref = `${base}about/`;
 const projectsHref = `${base}services/`;
 const contactHref = `${base}contact/`;
+
+const currentPath = Astro.url.pathname;
+
+const isHomeActive =
+  currentPath === homeHref || currentPath === "/milad-portfolio";
+const isAboutActive = currentPath === aboutHref;
+const isProjectsActive = currentPath === projectsHref;
+const isContactActive = currentPath === contactHref;
+
+const activeClass =
+  "text-blue-400 font-semibold drop-shadow-[0_0_8px_rgba(96,165,250,0.6)]";
+const inactiveClass = "text-foreground transition-colors hover:text-primary";
 ---
 
 <nav
@@ -29,25 +41,25 @@ const contactHref = `${base}contact/`;
       <div class="ml-10 flex items-baseline space-x-8">
         <a
           href={homeHref}
-          class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+          class={`text-sm font-medium transition-all duration-300 ${isHomeActive ? activeClass : inactiveClass}`}
         >
           Home
         </a>
         <a
           href={aboutHref}
-          class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+          class={`text-sm font-medium transition-all duration-300 ${isAboutActive ? activeClass : inactiveClass}`}
         >
           About
         </a>
         <a
           href={projectsHref}
-          class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+          class={`text-sm font-medium transition-all duration-300 ${isProjectsActive ? activeClass : inactiveClass}`}
         >
           Projects
         </a>
         <a
           href={contactHref}
-          class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+          class={`text-sm font-medium transition-all duration-300 ${isContactActive ? activeClass : inactiveClass}`}
         >
           Contact
         </a>
@@ -117,25 +129,41 @@ const contactHref = `${base}contact/`;
     >
       <a
         href={homeHref}
-        class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+        class={`block rounded-md px-3 py-2 text-base font-medium transition-all duration-300 ${
+          isHomeActive
+            ? "text-blue-400 font-semibold bg-blue-500/10"
+            : "text-foreground hover:bg-white/10 hover:text-primary"
+        }`}
       >
         Home
       </a>
       <a
         href={aboutHref}
-        class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+        class={`block rounded-md px-3 py-2 text-base font-medium transition-all duration-300 ${
+          isAboutActive
+            ? "text-blue-400 font-semibold bg-blue-500/10"
+            : "text-foreground hover:bg-white/10 hover:text-primary"
+        }`}
       >
         About
       </a>
       <a
         href={projectsHref}
-        class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+        class={`block rounded-md px-3 py-2 text-base font-medium transition-all duration-300 ${
+          isProjectsActive
+            ? "text-blue-400 font-semibold bg-blue-500/10"
+            : "text-foreground hover:bg-white/10 hover:text-primary"
+        }`}
       >
         Projects
       </a>
       <a
         href={contactHref}
-        class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+        class={`block rounded-md px-3 py-2 text-base font-medium transition-all duration-300 ${
+          isContactActive
+            ? "text-blue-400 font-semibold bg-blue-500/10"
+            : "text-foreground hover:bg-white/10 hover:text-primary"
+        }`}
       >
         Contact
       </a>
