@@ -10,66 +10,71 @@ const metadata = {
 
 <BaseLayout {metadata}>
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-[240px_minmax(0,1fr)]">
-      <!-- Left side navigation -->
-      <aside class="hidden lg:block">
-        <div
-          class="sticky top-28 rounded-3xl border border-border bg-card/60 p-5 backdrop-blur"
+    <!-- Fixed left nav on large screens -->
+    <aside class="fixed left-6 top-28 z-20 hidden w-56 xl:block">
+      <div
+        class="rounded-3xl border border-border bg-card/70 p-5 shadow-sm backdrop-blur"
+      >
+        <p
+          class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary"
         >
-          <p
-            class="mb-4 text-sm font-semibold uppercase tracking-wider text-primary"
+          On this page
+        </p>
+
+        <nav class="space-y-2">
+          <a
+            href="#intro"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            On this page
-          </p>
+            About Me
+          </a>
+          <a
+            href="#education"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+          >
+            Education
+          </a>
+          <a
+            href="#experience"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+          >
+            Experience
+          </a>
+          <a
+            href="#activities"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+          >
+            Activities
+          </a>
+          <a
+            href="#skills"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+          >
+            Skills
+          </a>
+          <a
+            href="#beyond-data"
+            class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+          >
+            Beyond Data
+          </a>
+        </nav>
+      </div>
+    </aside>
 
-          <nav class="space-y-2">
-            <a
-              href="#intro"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              About Me
-            </a>
-            <a
-              href="#education"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              Education
-            </a>
-            <a
-              href="#experience"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              Experience
-            </a>
-            <a
-              href="#activities"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              Activities
-            </a>
-            <a
-              href="#skills"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              Skills
-            </a>
-            <a
-              href="#beyond-data"
-              class="block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
-            >
-              Beyond Data
-            </a>
-          </nav>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <div class="space-y-8">
-        <!-- Intro -->
-        <section
-          id="intro"
-          class="rounded-3xl border border-border bg-card/60 p-8 shadow-sm backdrop-blur"
+    <!-- Main content -->
+    <div class="xl:ml-72 space-y-8">
+      <!-- Intro -->
+      <section
+        id="intro"
+        class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-8 shadow-sm backdrop-blur transition duration-300 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_30px_rgba(59,130,246,0.12)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
         >
+        </div>
+
+        <div class="relative">
           <p
             class="mb-3 text-sm font-semibold uppercase tracking-wider text-primary"
           >
@@ -92,29 +97,34 @@ const metadata = {
             <p>
               I enjoy working with data to uncover patterns, communicate
               insights clearly, and support better decision-making across
-              real-world domains including healthcare, digital platforms, and
-              consumer data.
+              different domains.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Education -->
-        <section id="education" class="space-y-5">
-          <div>
-            <p
-              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
-            >
-              Academic Background
-            </p>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground">
-              Education
-            </h2>
-          </div>
+      <!-- Education -->
+      <section id="education" class="space-y-5">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Academic Background
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight text-foreground">
+            Education
+          </h2>
+        </div>
 
-          <div class="grid gap-5 md:grid-cols-2">
+        <div class="grid gap-5 md:grid-cols-2">
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Master of Data Science
               </h3>
@@ -148,10 +158,16 @@ const metadata = {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Bachelor of Computer Engineering
               </h3>
@@ -176,25 +192,31 @@ const metadata = {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Experience -->
-        <section id="experience" class="space-y-5">
-          <div>
-            <p
-              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
-            >
-              Professional Experience
-            </p>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground">
-              Experience
-            </h2>
-          </div>
+      <!-- Experience -->
+      <section id="experience" class="space-y-5">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Professional Experience
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight text-foreground">
+            Experience
+          </h2>
+        </div>
 
-          <div class="space-y-5">
+        <div class="space-y-5">
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Data Analyst
               </h3>
@@ -212,10 +234,16 @@ const metadata = {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Data Analysis Intern
               </h3>
@@ -235,10 +263,16 @@ const metadata = {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Teaching Assistant
               </h3>
@@ -261,25 +295,31 @@ const metadata = {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Activities -->
-        <section id="activities" class="space-y-5">
-          <div>
-            <p
-              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
-            >
-              Leadership & Involvement
-            </p>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground">
-              Activities
-            </h2>
-          </div>
+      <!-- Activities -->
+      <section id="activities" class="space-y-5">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Leadership & Involvement
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight text-foreground">
+            Activities
+          </h2>
+        </div>
 
-          <div class="grid gap-5 md:grid-cols-2">
+        <div class="grid gap-5 md:grid-cols-2">
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Monash Data & AI Society
               </h3>
@@ -291,10 +331,16 @@ const metadata = {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 Hour of Code
               </h3>
@@ -303,10 +349,16 @@ const metadata = {
                 <li>Taught Python programming to high school students.</li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">
                 ACM Scientific Association
               </h3>
@@ -317,10 +369,16 @@ const metadata = {
                 </li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-xl font-semibold text-foreground">SampCode</h3>
               <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
                 <li>
@@ -333,25 +391,31 @@ const metadata = {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Skills -->
-        <section id="skills" class="space-y-5">
-          <div>
-            <p
-              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
-            >
-              Technical Skills
-            </p>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground">
-              Skills
-            </h2>
-          </div>
+      <!-- Skills -->
+      <section id="skills" class="space-y-5">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
+          >
+            Technical Skills
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight text-foreground">
+            Skills
+          </h2>
+        </div>
 
-          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-lg font-semibold text-foreground">Programming</h3>
               <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
                 <li>Python</li>
@@ -361,10 +425,16 @@ const metadata = {
                 <li>C</li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-lg font-semibold text-foreground">
                 Data Analysis & Visualization
               </h3>
@@ -377,10 +447,16 @@ const metadata = {
                 <li>Power BI</li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-lg font-semibold text-foreground">
                 Machine Learning
               </h3>
@@ -388,20 +464,32 @@ const metadata = {
                 <li>Scikit-learn</li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-lg font-semibold text-foreground">Databases</h3>
               <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
                 <li>MySQL</li>
                 <li>Oracle</li>
               </ul>
             </div>
+          </div>
 
+          <div
+            class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+          >
             <div
-              class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+              class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
             >
+            </div>
+            <div class="relative">
               <h3 class="text-lg font-semibold text-foreground">Tools</h3>
               <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
                 <li>Jupyter Notebook</li>
@@ -411,24 +499,30 @@ const metadata = {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Beyond Data -->
-        <section id="beyond-data" class="space-y-5">
-          <div>
-            <p
-              class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
-            >
-              Personal
-            </p>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground">
-              Beyond Data
-            </h2>
-          </div>
-
-          <div
-            class="rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur"
+      <!-- Beyond Data -->
+      <section id="beyond-data" class="space-y-5">
+        <div>
+          <p
+            class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary"
           >
+            Personal
+          </p>
+          <h2 class="text-3xl font-bold tracking-tight text-foreground">
+            Beyond Data
+          </h2>
+        </div>
+
+        <div
+          class="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.15),0_0_28px_rgba(59,130,246,0.14)]"
+        >
+          <div
+            class="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]"
+          >
+          </div>
+          <div class="relative">
             <ul class="list-disc space-y-2 pl-5 text-muted-foreground">
               <li>
                 Outside of my academic and professional work, I enjoy music and
@@ -440,8 +534,8 @@ const metadata = {
               </li>
             </ul>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </section>
 </BaseLayout>
