@@ -1,86 +1,89 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getImage } from "astro:assets";
+import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import Values from "@/components/widgets/Values.astro";
-import aboutImage from "@/assets/images/about-office.webp";
 
 const metadata = {
-  title: "About us",
+  title: "About",
   description:
-    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+    "Learn more about Milad Nooraei, a Master of Data Science student at Monash University with experience in analytics, machine learning, and visualization.",
 };
-
-const values = [
-  {
-    title: "Innovation",
-    description:
-      "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
-  },
-  {
-    title: "Commitment",
-    description:
-      "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
-  },
-  {
-    title: "Quality",
-    description:
-      "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
-  },
-  {
-    title: "Transparency",
-    description:
-      "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
-  },
-  {
-    title: "Teamwork",
-    description:
-      "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
-  },
-  {
-    title: "Excellence",
-    description:
-      "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
-  },
-];
-
-const optimizedImage = await getImage({
-  src: aboutImage,
-  format: "webp",
-});
 ---
 
 <BaseLayout {metadata}>
-  <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
-  <Content2
-    title="Our Vision"
-    description={[
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    ]}
+  <Content
     tagline="About"
-    image={aboutImage}
-    imageAlt="Modern web development office"
-    actions={[
-      {
-        text: "Contact Us",
-        href: "/contact",
-        variant: "primary",
-        icon: "lucide:mail",
-      },
-      {
-        text: "View Details",
-        href: "#",
-        variant: "secondary",
-        icon: "lucide:arrow-right",
-      },
+    title="About Me"
+    description={[
+      "I’m Milad Nooraei, a Master of Data Science student at Monash University with a background in computer engineering and hands-on experience in data analysis, machine learning, and data visualization.",
+      "I enjoy working with data to uncover patterns, communicate insights clearly, and support better decision-making across real-world domains including healthcare, digital platforms, and consumer data.",
     ]}
   />
-  <Values
-    items={values}
-    columns={3}
-    tagline="Our Values"
-    title="What Defines Us"
-    subtitle="Principles that guide our daily work"
+
+  <Content2
+    title="Education"
+    description={[
+      "Master of Data Science — Monash University, Melbourne, Australia (2025 – Present)",
+      "Bachelor of Computer Engineering — Shiraz University, Shiraz, Iran (2020 – 2024)",
+    ]}
+    tagline="Academic Background"
+  />
+
+  <Content2
+    isReversed={true}
+    title="Experience"
+    description={[
+      "Data Analyst — Shiraz University of Medical Sciences: Worked on ICU patient datasets and applied APACHE-based analytical methods to generate clinical insights.",
+      "Data Analysis Intern — Quera: Built hands-on experience with Python, SQL, statistics, dashboards, web scraping, and machine learning workflows.",
+      "Teaching Assistant — Shiraz University: Supported courses in Python programming, object-oriented programming, and modeling.",
+    ]}
+    tagline="Professional Experience"
+  />
+
+  <Content2
+    title="Leadership & Activities"
+    description={[
+      "Data & AI Officer — Monash Data & AI Society",
+      "Hour of Code — Contributed to event marketing, content creation, and Python teaching for high school students",
+      "ACM Scientific Association — Organized events and supported ICPC-related activities",
+      "SampCode — Co-organized the event and helped manage teams and execution",
+    ]}
+    tagline="Leadership & Involvement"
+  />
+
+  <Content2
+    isReversed={true}
+    title="Skills"
+    description={[
+      "Programming: Python, R, SQL, Java, C",
+      "Data Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Plotly, Power BI",
+      "Machine Learning: Scikit-learn",
+      "Databases: MySQL, Oracle",
+      "Tools: Jupyter Notebook, Visual Studio Code, Streamlit, Git",
+    ]}
+    tagline="Technical Skills"
+  />
+
+  <Content2
+    title="What I’m Looking For"
+    description={[
+      "I’m currently building my portfolio for data analyst and technology-focused roles where I can apply analytical thinking, technical skills, and problem-solving to real business or operational challenges.",
+      "I’m especially interested in opportunities that involve data analysis, visualization, insight generation, and using data to support strategic decisions.",
+    ]}
+    tagline="Career Direction"
+    actions={[
+      {
+        text: "View Projects",
+        href: "/services",
+        variant: "primary",
+        icon: "lucide:folder-open",
+      },
+      {
+        text: "Contact Me",
+        href: "/contact",
+        variant: "secondary",
+        icon: "lucide:mail",
+      },
+    ]}
   />
 </BaseLayout>

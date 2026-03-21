@@ -1,39 +1,14 @@
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+import tailwind from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
-import tailwindcss from "@tailwindcss/vite";
-import icon from "astro-icon";
-import remarkReadingTime from "remark-reading-time";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://astrostarterpro.com/",
-  integrations: [sitemap(), icon(), mdx()],
-  markdown: {
-    remarkPlugins: [
-      remarkReadingTime,
-      () => {
-        return function (tree, file) {
-          file.data.astro.frontmatter.minutesRead =
-            file.data.readingTime.minutes;
-        };
-      },
-    ],
-  },
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "viewport",
-  },
-  build: {
-    inlineStylesheets: "always",
-  },
+  site: "https://miladnooraei.github.io",
+  base: "/milad-portfolio",
+  integrations: [mdx(), sitemap()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwind()],
   },
+  output: "static",
 });

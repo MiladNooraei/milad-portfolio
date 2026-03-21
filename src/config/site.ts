@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Milad Nooraei",
   description:
     "Master of Data Science student at Monash University with experience in data analysis, visualization, and data-driven problem solving.",
-  url: "http://localhost:4321", // change later after deployment
+  url: "https://miladnooraei.github.io/milad-portfolio",
   lang: "en",
   locale: "en_US",
   author: "Milad Nooraei",
