@@ -54,26 +54,19 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
         ) {
           return localStorage.getItem("theme");
         }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
         return "light";
       };
 
       const setTheme = () => {
         const theme = getTheme();
-        if (theme === "light") {
-          document.documentElement.setAttribute("data-theme", "light");
-        } else {
+        if (theme === "dark") {
           document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        window.localStorage.setItem("theme", theme);
       };
 
-      // Run immediately on first hard load
       setTheme();
-
-      // Run before the new page renders during View Transitions
       document.addEventListener("astro:after-swap", setTheme);
     </script>
   </head>
@@ -109,26 +102,20 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
     <SpeedInsights />
     <Analytics />
     <script>
-      // Keep a global reference to prevent duplicate observers during View Transitions
-      let scrollObserver: IntersectionObserver | null = null;
+      let scrollObserver = null;
 
       const setupAnimations = () => {
-        // Disconnect previous observer if it exists (prevents ghost triggers)
         if (scrollObserver) {
           scrollObserver.disconnect();
         }
 
-        // Instantly bypass scroll animations for elements already visible in viewport
-        // This solves the Astro View Transitions "double bounce" issue completely
         document.querySelectorAll(".reveal:not(.active)").forEach((el) => {
           if (el.getBoundingClientRect().top < window.innerHeight) {
-            // Temporarily disable transition during initial show
             el.setAttribute(
               "style",
               "transition: none !important; transform: none !important;",
             );
             el.classList.add("active");
-            // Reactivate their explicit styles so CSS takes over next time
             requestAnimationFrame(() => {
               el.removeAttribute("style");
             });
@@ -139,7 +126,6 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
           (entries, observer) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Add class synchronously to prevent frame delays
                 entry.target.classList.add("active");
                 observer.unobserve(entry.target);
               }
