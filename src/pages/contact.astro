@@ -1,65 +1,66 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Features from "@/components/widgets/Features.astro";
 import Content from "@/components/widgets/Content.astro";
-import Form from "@/components/ui/Form.astro";
+import Features from "@/components/widgets/Features.astro";
 
 const metadata = {
   title: "Contact",
-  description: "Get in touch with us to discuss your next project.",
+  description:
+    "Get in touch with Milad Nooraei for opportunities, collaborations, or professional connections.",
 };
 
-const visionText = ["Get in touch with us to discuss your next project."];
+const introText = [
+  "I’m always happy to connect about data, analytics, technology, and new opportunities. Feel free to reach out through any of the channels below.",
+];
 ---
 
 <BaseLayout {metadata}>
-  <Content tagline="Contact" title="Contact" description={visionText} />
-  <div
-    class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
-  >
-    <Form />
-  </div>
+  <Content tagline="Contact" title="Let’s Connect" description={introText} />
+
   <Features
-    tagline="Contact Means"
-    title="We are here to help you"
-    subtitle="Choose the communication channel you prefer. We respond in less than 24 hours."
+    tagline="Contact Details"
+    title="Reach Out"
+    subtitle="The best way to contact me is by email or LinkedIn, but you can also find me through the links below."
     classes={{ container: "pt-0 md:pt-0" }}
     features={[
       {
         title: "Phone",
-        description: "+123 456 7890",
+        description: "+61 422 144 417",
         icon: "lucide:phone",
         iconClass: "bg-green-500/10 text-green-400",
       },
       {
         title: "Email",
-        description: "contact@company.com",
+        description: "mnoo0018@student.monash.edu",
         icon: "lucide:mail",
         iconClass: "bg-yellow-500/10 text-yellow-400",
       },
       {
         title: "Location",
-        description: "City, Country",
+        description: "South Yarra, Melbourne, Victoria, Australia",
         icon: "lucide:map-pin",
         iconClass: "bg-red-500/10 text-red-400",
       },
       {
-        title: "Personalized Attention",
-        description: "We understand your needs to offer tailored solutions.",
-        icon: "lucide:user-check",
+        title: "LinkedIn",
+        description: "linkedin.com/in/milad-nooraei",
+        icon: "lucide:linkedin",
         iconClass: "bg-blue-500/10 text-blue-400",
+        href: "https://www.linkedin.com/in/milad-nooraei/",
       },
       {
-        title: "Technical Support",
-        description: "We resolve any doubt or technical incident quickly.",
-        icon: "lucide:wrench",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Strategic Consulting",
-        description: "We advise you to ensure the success of your project.",
-        icon: "lucide:briefcase",
+        title: "Instagram",
+        description: "@milad___nooraei",
+        icon: "lucide:instagram",
         iconClass: "bg-pink-500/10 text-pink-400",
+        href: "https://www.instagram.com/milad___nooraei",
+      },
+      {
+        title: "Professional Interest",
+        description:
+          "Open to data, analytics, and technology-focused opportunities",
+        icon: "lucide:briefcase",
+        iconClass: "bg-purple-500/10 text-purple-400",
       },
     ]}
   />
