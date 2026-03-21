@@ -1,128 +1,151 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ServiceList from "@/components/widgets/ServiceList.astro";
 import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import webDevImg from "@/assets/images/services/web-dev.webp";
-import seoImg from "@/assets/images/services/seo.webp";
-import consultingImg from "@/assets/images/services/consulting.webp";
+import spotifyImg from "@/assets/images/projects/spotify-dashboard.png";
+import chronicImg from "@/assets/images/projects/chronic-disease-risk-analysis.png";
+import amazonImg from "@/assets/images/projects/amazon-price-prediction.png";
 
-const services = [
-  {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
-  },
-  {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
-  },
-  {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
-  },
-];
 const metadata = {
-  title: "Services",
+  title: "Projects",
   description:
-    "Discover our web development, SEO optimization, and technology consulting services.",
+    "Selected data analytics and machine learning projects by Milad Nooraei.",
 };
 ---
 
 <BaseLayout {metadata}>
   <Content
-    tagline="Services"
-    title="Our Services"
+    tagline="Portfolio"
+    title="Projects"
     description={[
-      "Comprehensive solutions designed to maximize the potential of your digital presence.",
+      "A selection of projects demonstrating my experience in data analysis, machine learning, and data-driven problem solving.",
+      "Each project reflects my ability to work with real-world datasets, build analytical pipelines, and generate actionable insights.",
     ]}
   />
-  <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
-  <Content
-    tagline="Web Development"
-    title="Modern Web Development"
-    description={[
-      "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
-    ]}
-    classes={{ container: "pb-0 md:pb-0" }}
-  />
+
+  <!-- Spotify -->
   <Content2
     items={[
       {
-        title: "Responsive Design",
+        title: "Problem",
         description:
-          "Your site will look perfect on any device, from mobiles to desktop screens.",
+          "Understand patterns in music data and identify factors influencing song popularity and user listening behaviour.",
       },
       {
-        title: "Optimized Performance",
+        title: "Tools",
         description:
-          "Fast loading to improve user experience and SEO positioning.",
+          "Python, SQL, Pandas, Machine Learning (Regression, Clustering, Classification), Power BI.",
+      },
+      {
+        title: "Outcome",
+        description:
+          "Developed an end-to-end analytics pipeline and interactive dashboards to generate insights and support data-driven recommendations.",
       },
     ]}
-    image={webDevImg}
-    imageAlt="Modern Web Development"
-    classes={{ container: "pt-0 md:pt-0" }}
+    image={spotifyImg}
+    imageAlt="Spotify analytics dashboard"
   >
     <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Modern Web Development
-      </h3>
-      We specialize in building fast, secure, and scalable websites using the latest
-      technologies. We transform your vision into an impactful digital experience.
+      <h3 class="text-2xl font-bold mb-2">Spotify Data Analytics</h3>
+      Built a comprehensive data analysis pipeline covering data collection, cleaning,
+      database design, statistical analysis, and machine learning. The project explored
+      audio features and user behaviour patterns across multiple countries and time
+      periods, enabling insight generation and visualization.
+      <div class="mt-4">
+        <a
+          href="https://github.com/MiladNooraei/Spotify-Analytics"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-blue-500 hover:text-blue-400 transition duration-300 underline underline-offset-4 decoration-blue-500 hover:decoration-blue-300 hover:scale-105 inline-block"
+        >
+          View on GitHub
+        </a>
+      </div>
     </Fragment>
   </Content2>
 
+  <!-- Chronic Disease -->
   <Content2
     isReversed={true}
     items={[
       {
-        title: "SEO Audit",
+        title: "Problem",
         description:
-          "We deeply analyze your website to identify technical and content improvement opportunities.",
+          "Analyze how demographic and lifestyle factors influence chronic disease risk and identify meaningful patterns across patient populations.",
       },
       {
-        title: "Content Strategy",
+        title: "Tools",
         description:
-          "We create relevant content plans that attract and retain your target audience.",
+          "R, tidyverse, ggplot2, caret, recipes, logistic regression, multinomial logistic regression.",
+      },
+      {
+        title: "Outcome",
+        description:
+          "Combined exploratory healthcare analytics with predictive modeling to identify disease-related patterns and support data-driven interpretation.",
       },
     ]}
-    image={seoImg}
-    imageAlt="SEO Strategies"
+    image={chronicImg}
+    imageAlt="Chronic disease risk analysis charts"
   >
     <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        SEO Optimization
+      <h3 class="text-2xl font-bold mb-2">
+        Chronic Disease Prediction & Progression Analysis
       </h3>
-      We help your business get found by the right people. Our organic positioning
-      strategies are designed to improve your organic visibility.
+      Analyzed anonymized patient health data to study chronic disease risk and progression
+      using both exploratory analysis and predictive modeling. The project examined
+      how variables such as smoking, diet quality, gender, biomarkers, and lifestyle
+      factors relate to disease outcomes, while also building interpretable classification
+      models for chronic disease prediction.
+      <div class="mt-4">
+        <a
+          href="https://github.com/MiladNooraei/Chronic-Disease-Prediction-Progression-Analysis"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-blue-500 hover:text-blue-400 transition duration-300 underline underline-offset-4 decoration-blue-500 hover:decoration-blue-300 hover:scale-105 inline-block"
+        >
+          View on GitHub
+        </a>
+      </div>
     </Fragment>
   </Content2>
 
+  <!-- Amazon -->
   <Content2
     items={[
       {
-        title: "Digital Transformation",
+        title: "Problem",
         description:
-          "We guide you in adopting new technologies to optimize your business processes.",
+          "Analyze laptop pricing and specifications to understand market trends and key pricing factors.",
       },
       {
-        title: "Software Architecture",
+        title: "Tools",
         description:
-          "We design robust and scalable systems prepared for future growth.",
+          "Python, Selenium, BeautifulSoup, Pandas, Linear Regression, Random Forest.",
+      },
+      {
+        title: "Outcome",
+        description:
+          "Built predictive models to estimate laptop prices and evaluate how technical specifications affect pricing.",
       },
     ]}
-    image={consultingImg}
-    imageAlt="Technology Consulting"
+    image={amazonImg}
+    imageAlt="Amazon laptop price prediction plot"
   >
     <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Technology Consulting
-      </h3>
-      We accompany you in critical decision-making. We evaluate your current infrastructure
-      and design personalized roadmaps to take your company to the next technological
-      level.
+      <h3 class="text-2xl font-bold mb-2">Amazon Laptop Data Analysis</h3>
+      Collected real-world product data through web scraping, performed data cleaning
+      and feature engineering, and developed machine learning models to predict laptop
+      prices and analyze feature importance across different product categories.
+      <div class="mt-4">
+        <a
+          href="https://github.com/MiladNooraei/Amazon-Laptop-Analysis"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-blue-500 hover:text-blue-400 transition duration-300 underline underline-offset-4 decoration-blue-500 hover:decoration-blue-300 hover:scale-105 inline-block"
+        >
+          View on GitHub
+        </a>
+      </div>
     </Fragment>
   </Content2>
 </BaseLayout>

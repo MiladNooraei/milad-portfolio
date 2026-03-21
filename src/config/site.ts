@@ -1,26 +1,27 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
+  name: "Milad Nooraei",
   description:
-    "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
+    "Master of Data Science student at Monash University with experience in data analysis, visualization, and data-driven problem solving.",
+  url: "http://localhost:4321", // change later after deployment
   lang: "en",
   locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+  author: "Milad Nooraei",
+  twitter: "",
+
   ogImage: ogImage,
+
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    twitter: "",
+    github: "https://github.com/MiladNooraei",
+    discord: "",
   },
+
   navLinks: [
     { text: "Home", href: "/" },
     { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
-    { text: "Blog", href: "/blog" },
+    { text: "Projects", href: "/services" },
     { text: "Contact", href: "/contact" },
-    { text: "Widgets", href: "/widgets" },
   ],
 };
