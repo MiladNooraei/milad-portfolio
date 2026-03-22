@@ -154,9 +154,10 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       }
     </style>
 
-    <script>
+    <script is:inline>
       let scrollObserver = null;
-      let cursorGlowInitialized = false;
+      let cursorMoveHandler = null;
+      let cursorLeaveHandler = null;
 
       const setupAnimations = () => {
         if (scrollObserver) {
@@ -200,38 +201,39 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
         if (!glow || window.innerWidth < 768) return;
 
         const interactiveSelector =
-          'a, button, input, textarea, select, [role="button"], .group';
+          "a, button, input, textarea, select, [role='button'], .group";
 
-        const moveGlow = (e) => {
+        if (cursorMoveHandler) {
+          window.removeEventListener("mousemove", cursorMoveHandler);
+        }
+
+        if (cursorLeaveHandler) {
+          window.removeEventListener("mouseleave", cursorLeaveHandler);
+        }
+
+        cursorMoveHandler = (e) => {
           glow.style.left = e.clientX + "px";
           glow.style.top = e.clientY + "px";
           glow.classList.add("glow-active");
         };
 
-        const hideGlow = () => {
+        cursorLeaveHandler = () => {
           glow.classList.remove("glow-active");
           glow.classList.remove("glow-hover");
         };
 
-        const refreshInteractiveHover = () => {
-          document.querySelectorAll(interactiveSelector).forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-              glow.classList.add("glow-hover");
-            });
+        window.addEventListener("mousemove", cursorMoveHandler);
+        window.addEventListener("mouseleave", cursorLeaveHandler);
 
-            el.addEventListener("mouseleave", () => {
-              glow.classList.remove("glow-hover");
-            });
-          });
-        };
+        document.querySelectorAll(interactiveSelector).forEach((el) => {
+          el.onmouseenter = () => {
+            glow.classList.add("glow-hover");
+          };
 
-        if (!cursorGlowInitialized) {
-          window.addEventListener("mousemove", moveGlow);
-          window.addEventListener("mouseleave", hideGlow);
-          cursorGlowInitialized = true;
-        }
-
-        refreshInteractiveHover();
+          el.onmouseleave = () => {
+            glow.classList.remove("glow-hover");
+          };
+        });
       };
 
       document.addEventListener("astro:page-load", () => {
