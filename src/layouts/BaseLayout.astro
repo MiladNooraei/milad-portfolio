@@ -46,6 +46,8 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
     <ClientRouter />
     <Schema type="WebSite" data={{}} />
     <slot name="head" />
+
+    <!-- Theme (default LIGHT) -->
     <script is:inline>
       const getTheme = () => {
         if (
@@ -59,20 +61,21 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
 
       const setTheme = () => {
         const theme = getTheme();
-        if (theme === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-          document.documentElement.setAttribute("data-theme", "light");
-        }
+        document.documentElement.setAttribute(
+          "data-theme",
+          theme === "dark" ? "dark" : "light",
+        );
       };
 
       setTheme();
       document.addEventListener("astro:after-swap", setTheme);
     </script>
   </head>
+
   <body
-    class="bg-background text-foreground antialiased selection:bg-blue-500/30 dark:selection:text-blue-200"
+    class="bg-background text-foreground antialiased selection:bg-blue-300/40 selection:text-foreground dark:selection:bg-blue-500/30 dark:selection:text-white"
   >
+    <!-- Skip -->
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 rounded-md bg-primary px-4 py-2 text-white shadow-lg ring-2 ring-white"
@@ -80,6 +83,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       Skip to content
     </a>
 
+    <!-- Cursor Glow -->
     <div id="cursor-glow"></div>
 
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
@@ -96,21 +100,24 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       </div>
 
       <Navbar />
+
       <main id="main-content" class="relative z-10 grow pt-[72px]">
         <slot />
       </main>
+
       <Footer />
     </div>
 
     <SpeedInsights />
     <Analytics />
 
+    <!-- Cursor Glow Style -->
     <style>
       #cursor-glow {
         position: fixed;
         left: 0;
         top: 0;
-        width: 110px; /* smaller */
+        width: 110px;
         height: 110px;
         border-radius: 9999px;
         pointer-events: none;
@@ -118,11 +125,11 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
         background: radial-gradient(
           circle,
           rgba(96, 165, 250, 0.45),
-          /* stronger blue */ rgba(168, 85, 247, 0.35),
-          /* stronger purple */ transparent 70%
+          rgba(168, 85, 247, 0.35),
+          transparent 70%
         );
 
-        filter: blur(35px); /* less blur → more visible */
+        filter: blur(35px);
         transform: translate(-50%, -50%);
         z-index: 1;
 
@@ -137,6 +144,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       }
     </style>
 
+    <!-- Scripts -->
     <script>
       let scrollObserver = null;
 
@@ -168,34 +176,31 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
             });
           },
           {
-            root: null,
-            rootMargin: "0px",
             threshold: 0.1,
           },
         );
 
-        const remainingElements = document.querySelectorAll(
-          ".reveal:not(.active)",
-        );
-        remainingElements.forEach((el) => scrollObserver?.observe(el));
+        document
+          .querySelectorAll(".reveal:not(.active)")
+          .forEach((el) => scrollObserver?.observe(el));
       };
 
       const setupCursorGlow = () => {
         const glow = document.getElementById("cursor-glow");
         if (!glow || window.innerWidth < 768) return;
 
-        const moveGlow = (e) => {
+        const move = (e) => {
           glow.style.left = e.clientX + "px";
           glow.style.top = e.clientY + "px";
           glow.style.opacity = "1";
         };
 
-        const hideGlow = () => {
+        const hide = () => {
           glow.style.opacity = "0";
         };
 
-        window.addEventListener("mousemove", moveGlow);
-        window.addEventListener("mouseleave", hideGlow);
+        window.addEventListener("mousemove", move);
+        window.addEventListener("mouseleave", hide);
       };
 
       document.addEventListener("astro:page-load", () => {
