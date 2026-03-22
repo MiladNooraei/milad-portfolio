@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 
 const metadata = {
   title: "About",
@@ -25,44 +26,55 @@ const metadata = {
           <a
             href="#intro"
             data-section-link="intro"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            About Me
+            <Icon name="lucide:user-round" class="h-4 w-4" />
+            <span>About Me</span>
           </a>
+
           <a
             href="#education"
             data-section-link="education"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            Education
+            <Icon name="lucide:graduation-cap" class="h-4 w-4" />
+            <span>Education</span>
           </a>
+
           <a
             href="#experience"
             data-section-link="experience"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            Experience
+            <Icon name="lucide:briefcase" class="h-4 w-4" />
+            <span>Experience</span>
           </a>
+
           <a
             href="#activities"
             data-section-link="activities"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            Activities
+            <Icon name="lucide:users" class="h-4 w-4" />
+            <span>Activities</span>
           </a>
+
           <a
             href="#skills"
             data-section-link="skills"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            Skills
+            <Icon name="lucide:hammer" class="h-4 w-4" />
+            <span>Skills</span>
           </a>
+
           <a
             href="#beyond-data"
             data-section-link="beyond-data"
-            class="about-nav-link block rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
+            class="about-nav-link flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-muted-foreground transition hover:bg-foreground/5 hover:text-foreground"
           >
-            Beyond Data
+            <Icon name="lucide:music" class="h-4 w-4" />
+            <span>Beyond Data</span>
           </a>
         </nav>
       </div>
@@ -149,17 +161,17 @@ const metadata = {
               <ul class="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
                 <li>2025 – Present</li>
                 <li>
-                  <span class="font-semibold text-foreground">GPA:</span> 85.1 / 100
-                  (≈ 3.63 / 4.0)
+                  <span class="font-semibold text-foreground">GPA:</span> 85.125 /
+                  100 (3.625 / 4.0)
                 </li>
                 <li>
                   <span class="font-semibold text-foreground"
                     >Relevant coursework:</span
                   >
-                  Statistical Data Modelling, Foundations of Data Science, IT Research
-                  and Innovation Methods, Project Management, Introduction to Python
-                  Programming, Introduction to Databases, Mathematical Foundations
-                  for Data Science and AI, Introduction to Computer Architecture and
+                  Foundations of Data Science, Introduction to Python Programming,
+                  Introduction to Databases, Project Management, Mathematical Foundations
+                  for Data Science and AI, Statistical Data Modelling, IT Research
+                  and Innovation Methods, Introduction to Computer Architecture and
                   Networks
                 </li>
               </ul>
