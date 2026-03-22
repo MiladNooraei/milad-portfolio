@@ -80,6 +80,8 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       Skip to content
     </a>
 
+    <div id="cursor-glow"></div>
+
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
       <!-- Background Glow -->
       <div class="pointer-events-none fixed inset-0 z-0 hidden md:block">
@@ -99,8 +101,42 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       </main>
       <Footer />
     </div>
+
     <SpeedInsights />
     <Analytics />
+
+    <style>
+      #cursor-glow {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 110px; /* smaller */
+        height: 110px;
+        border-radius: 9999px;
+        pointer-events: none;
+
+        background: radial-gradient(
+          circle,
+          rgba(96, 165, 250, 0.45),
+          /* stronger blue */ rgba(168, 85, 247, 0.35),
+          /* stronger purple */ transparent 70%
+        );
+
+        filter: blur(35px); /* less blur → more visible */
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      @media (max-width: 767px) {
+        #cursor-glow {
+          display: none;
+        }
+      }
+    </style>
+
     <script>
       let scrollObserver = null;
 
@@ -144,8 +180,33 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
         remainingElements.forEach((el) => scrollObserver?.observe(el));
       };
 
-      document.addEventListener("astro:page-load", setupAnimations);
-      document.addEventListener("astro:after-swap", setupAnimations);
+      const setupCursorGlow = () => {
+        const glow = document.getElementById("cursor-glow");
+        if (!glow || window.innerWidth < 768) return;
+
+        const moveGlow = (e) => {
+          glow.style.left = e.clientX + "px";
+          glow.style.top = e.clientY + "px";
+          glow.style.opacity = "1";
+        };
+
+        const hideGlow = () => {
+          glow.style.opacity = "0";
+        };
+
+        window.addEventListener("mousemove", moveGlow);
+        window.addEventListener("mouseleave", hideGlow);
+      };
+
+      document.addEventListener("astro:page-load", () => {
+        setupAnimations();
+        setupCursorGlow();
+      });
+
+      document.addEventListener("astro:after-swap", () => {
+        setupAnimations();
+        setupCursorGlow();
+      });
     </script>
   </body>
 </html>
