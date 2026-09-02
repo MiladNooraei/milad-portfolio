@@ -5,6 +5,7 @@ import Content2 from "@/components/widgets/Content2.astro";
 import spotifyImg from "@/assets/images/projects/spotify-dashboard.png";
 import chronicImg from "@/assets/images/projects/chronic-disease-risk-analysis.png";
 import amazonImg from "@/assets/images/projects/amazon-price-prediction.png";
+import reneryImg from "@/assets/images/projects/renery-dashboard.png";
 
 const metadata = {
   title: "Projects",
@@ -23,8 +24,50 @@ const metadata = {
     ]}
   />
 
+  <!-- Renery -->
+  <Content2
+    items={[
+      {
+        title: "Problem",
+        description:
+          "Renewable-energy availability and electricity tariffs can change throughout the day, but this information comes from different sources and can be difficult for everyday households to understand and compare.",
+      },
+      {
+        title: "Tools",
+        description:
+          "React, Tailwind CSS, Node.js, Express.js, PostgreSQL, Python, Pandas, Scikit-learn, AEMO Energy Data, AER Electricity Plan Data.",
+      },
+      {
+        title: "Outcome",
+        description:
+          "Currently in development. Renery aims to turn complex energy and tariff data into simple, practical recommendations that help households decide when to use flexible appliances.",
+      },
+    ]}
+    image={reneryImg}
+    imageAlt="Renery smart energy planner dashboard"
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold mb-2">Renery — Smart Energy Planner</h3>
+
+      <p class="mb-2 font-medium text-blue-500">Currently in Development</p>
+
+      Renery is a web application designed to help Australian households make
+      greener electricity choices. It combines renewable-energy forecasts,
+      electricity plan information and the user's available schedule to
+      recommend better times for flexible household activities such as washing,
+      dishwashing, clothes drying and EV charging.
+
+      <div class="mt-4">
+        <span class="font-semibold text-muted-foreground">
+          Project link coming soon
+        </span>
+      </div>
+    </Fragment>
+  </Content2>
+
   <!-- Spotify -->
   <Content2
+    isReversed={true}
     items={[
       {
         title: "Problem",
@@ -66,7 +109,6 @@ const metadata = {
 
   <!-- Chronic Disease -->
   <Content2
-    isReversed={true}
     items={[
       {
         title: "Problem",
@@ -111,6 +153,7 @@ const metadata = {
 
   <!-- Amazon -->
   <Content2
+    isReversed={true}
     items={[
       {
         title: "Problem",
