@@ -60,7 +60,8 @@ export interface ContentProps extends HeadlineProps {
   items?: Feature[];
   isReversed?: boolean;
   isAfterContent?: boolean;
-  description?: string[]; // Adding back description as string array for compatibility
+  description?: string | string[]; // Adding back description as string array for compatibility
+  subtitleClass?: string;
   actions?: string | CallToAction[];
 }
 
