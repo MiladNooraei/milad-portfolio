@@ -203,7 +203,7 @@ const introText = [
   </section>
 
   <script is:inline>
-    document.addEventListener("astro:page-load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".copy-btn").forEach((btn) => {
         btn.addEventListener("click", async (e) => {
           e.preventDefault();

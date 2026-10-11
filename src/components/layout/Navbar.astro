@@ -198,7 +198,7 @@ const inactiveClass = "text-foreground transition-colors hover:text-primary";
 </nav>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
     const iconClosed = document.getElementById("menu-icon-closed");

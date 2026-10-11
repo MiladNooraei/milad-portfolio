@@ -65,7 +65,6 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       };
 
       setTheme();
-      document.addEventListener("astro:after-swap", setTheme);
     </script>
   </head>
 
@@ -234,12 +233,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
         });
       };
 
-      document.addEventListener("astro:page-load", () => {
-        setupAnimations();
-        setupCursorGlow();
-      });
-
-      document.addEventListener("astro:after-swap", () => {
+      document.addEventListener("DOMContentLoaded", () => {
         setupAnimations();
         setupCursorGlow();
       });

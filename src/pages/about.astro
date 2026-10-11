@@ -591,7 +591,7 @@ const metadata = {
   </section>
 
   <script is:inline>
-    document.addEventListener("astro:page-load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const links = document.querySelectorAll(".about-nav-link");
       const sections = document.querySelectorAll("section[id]");
 
