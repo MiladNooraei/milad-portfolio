@@ -30,17 +30,17 @@ const metadata = {
       {
         title: "Problem",
         description:
-          "Renewable-energy availability and electricity tariffs can change throughout the day, but this information comes from different sources and can be difficult for everyday households to understand and compare.",
+          "Renewable-energy availability and electricity prices change throughout the day, but households often lack a simple way to compare this information and decide when to use electricity.",
       },
       {
         title: "Tools",
         description:
-          "React, Tailwind CSS, Node.js, Express.js, PostgreSQL, Python, Pandas, Scikit-learn, AEMO Energy Data, AER Electricity Plan Data.",
+          "Python, Pandas, Scikit-learn, PostgreSQL, React, Tailwind CSS, Node.js, Express.js, AEMO Energy Data, AER Electricity Plan Data.",
       },
       {
         title: "Outcome",
         description:
-          "Currently in development. Renery aims to turn complex energy and tariff data into simple, practical recommendations that help households decide when to use flexible appliances.",
+          "Built a data pipeline to collect, clean, and manage Australian energy data. Worked with the team to develop renewable-energy forecasts, smart appliance scheduling, and environmental impact tracking.",
       },
     ]}
     image={reneryImg}
@@ -50,17 +50,33 @@ const metadata = {
       <h3 class="text-2xl font-bold mb-2">Renery — Smart Energy Planner</h3>
 
       <p class="mb-2 font-medium text-blue-500">Currently in Development</p>
+      <p class="mb-4 text-sm text-muted-foreground">
+        Master's Capstone Project | Monash University
+      </p>
 
-      Renery is a web application designed to help Australian households make
-      greener electricity choices. It combines renewable-energy forecasts,
-      electricity plan information and the user's available schedule to
-      recommend better times for flexible household activities such as washing,
-      dishwashing, clothes drying and EV charging.
+      <p>
+        Renery is a web application developed as part of my Master's capstone
+        project at Monash University. It helps Australian households find
+        greener and more cost-effective times to use electricity by combining
+        renewable-energy forecasts, electricity tariffs, and personal schedules.
+      </p>
+      <p class="mt-4">
+        The application supports activities such as washing, dishwashing,
+        clothes drying, and EV charging.
+      </p>
 
       <div class="mt-4">
-        <span class="font-semibold text-muted-foreground">
-          Project link coming soon
-        </span>
+        <a
+          href="https://renery.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-blue-500 hover:text-blue-400 transition duration-300 underline underline-offset-4 decoration-blue-500 hover:decoration-blue-300 hover:scale-105 inline-block"
+        >
+          View Live Website
+        </a>
+        <p class="mt-2 text-sm text-muted-foreground">
+          Currently in development — use password: test
+        </p>
       </div>
     </Fragment>
   </Content2>
